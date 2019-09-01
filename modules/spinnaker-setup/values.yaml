@@ -184,7 +184,7 @@ s3:
   rootFolder: "front50"
   region: "us-east-1"
   accessKey: AKIAX5MDWTPRX4DAEROU
-  secretKey: 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
+  secretKey: 
 
 # Azure Storage Account
 azs:
