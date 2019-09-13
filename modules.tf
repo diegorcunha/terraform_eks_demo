@@ -22,8 +22,10 @@ module "dependencies" {
   aws_auth                = "${module.eks.aws_auth}"
   aws_region              = "${var.aws_region}"
   vpc_id                  = "${module.network.vpc_id}"
-  aws_iam_role            = "${module.eks.aws_iam_role}"
+  aws_iam_role_node       = "${module.eks.aws_iam_role_node}"
+  aws_iam_role_master     = "${module.eks.aws_iam_role_master}"
   cluster-name            = "${var.cluster-name}"
+  configuration           = "${file("./modules/dependencies/cluster_autoscaler.yaml")}"
 }
 
 module "jenkins-setup" {

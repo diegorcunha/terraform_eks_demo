@@ -1,6 +1,6 @@
 
-resource "aws_iam_policy" "alb-ingress-controler-s3-policy" {
-  name = "alb-ingress-controler-s3"
+resource "aws_iam_policy" "alb-ingress-controler-policy" {
+  name = "alb-ingress-controler"
   path = "/"
 
   policy = <<EOF
@@ -120,8 +120,8 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "role-policy-attachment" {
-  role       = "${var.aws_iam_role}"
-  policy_arn = "${aws_iam_policy.alb-ingress-controler-s3-policy.arn}"
+  role       = "${var.aws_iam_role_node}"
+  policy_arn = "${aws_iam_policy.alb-ingress-controler-policy.arn}"
 }
 
 resource "kubernetes_service_account" "alb-ingress-controller-sa" {

@@ -14,11 +14,9 @@ variable "tiller_image" {
 }
 
 variable "aws_eks_cluster_demo" {
-
 }
 
 variable "aws_auth" {
-
 }
 
 variable "cluster-name" {
@@ -33,6 +31,15 @@ variable "aws_region" {
   type = "string"
 }
 
-variable "aws_iam_role" {
 
+variable "aws_iam_role_node" {
+
+}
+
+variable "aws_iam_role_master" {
+
+}
+
+variable "configuration" {
+  description = "The configuration that should be applied"
 }

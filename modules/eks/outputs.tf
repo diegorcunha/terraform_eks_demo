@@ -13,3 +13,10 @@ output "aws_auth" {
 output "aws_iam_role" {
   value = "${aws_iam_role.demo-node.name}"
 }
+
+output "aws_iam_role_node" {
+  value = "${aws_iam_role.demo-node}"
+}
+output "aws_iam_role_master" {
+  value = "${aws_iam_role.demo-cluster}"
+}
